@@ -8,6 +8,7 @@ public class Bullets : MonoBehaviour
 {
    public AudioSource hitSource;
    public float life = 3;
+   public Score getScore;
    
    /*
    void Awake()
@@ -26,6 +27,7 @@ public class Bullets : MonoBehaviour
       if (collision.gameObject.tag == "Player")
       {
          Debug.Log("hit");
+         getScore.scoreValue += 10;
          hitSource.Play();
       }
       Destroy(gameObject);
